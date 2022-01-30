@@ -3,7 +3,10 @@ import React, { useState, useEffect } from 'react'
 
 function App(props) {
   const [estados, setEstados] = useState([])
-  //const []
+  const [municipios, setMunicipios] = useState([])
+  const estadoId = getEstado()
+  console.log(estadoId)
+
   useEffect(() => {
     fetch(
       'https://servicodados.ibge.gov.br/api/v1/localidades/estados?orderBy=nome',
@@ -12,23 +15,26 @@ function App(props) {
       .then((data) => {
         setEstados(data)
       })
-  }, [])
 
-  function getEstado(e) {
-    const estadoId = e
-    console.log(estadoId.value)
-    return estadoId.value
-  }
-
-  function getMunicipio(e) {
-    const estadoId = getEstado(e)
     fetch(
-      `https://servicodados.ibge.gov.br/api/v1/localidades/estados/${estadoId}/municipios`,
+      `https://servicodados.ibge.gov.br/api/v1/localidades/estados/${
+        estadoId || 12
+      }/municipios`,
     )
       .then((response) => response.json())
       .then((data) => {
-        console.log(data)
+        setMunicipios(data)
       })
+  }, [estadoId])
+
+  function getEstado(e) {
+    let estadoId = e
+    //console.log(estadoId)
+    return estadoId
+  }
+
+  function getMunicipio(e) {
+    //const estadoId = getEstado(e)
   }
 
   return (
@@ -42,10 +48,13 @@ function App(props) {
         ))}
       </select>
       <label for="municipio">Selecione o municipio: </label>
-      <select>
-        {estados.map((estados) => (
-          <option key={estados.id} value={estados.id}>
-            {estados.nome}
+      <select
+        id="muninipio"
+        onChange={(m) => getMunicipio({ value: m.target.value })}
+      >
+        {municipios.map((municipios) => (
+          <option key={municipios.id} value={municipios.id}>
+            {municipios.nome}
           </option>
         ))}
       </select>
