@@ -16,8 +16,9 @@ export function State() {
 
   return (
     <div>
-      <label for="estado">Selecione o estado: </label>
-      <select onChange={(stateId) => setStatesId(stateId.target.value)}>
+      <label for="state">Selecione o estado: </label>
+      <select id="state" onChange={(stateId) => setStatesId(stateId.target.value)}>
+      <option>Selecione um estado</option>
         {states.map((states) => (
           <option key={states.id} value={states.id}>
             {states.nome}
