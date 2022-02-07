@@ -1,25 +1,22 @@
-.temp{
-    padding: 5px;
-    width: 400px;
-    text-align: center;
-    align-items: center;
-    justify-content: center;
-    
-}
-
 .resume{
     padding: 5px;
     margin-top: 10px;
-    
+    text-align: center; 
 }
 
 .icon-temp{
     display: block;
-    margin-left: auto;
-    margin-right: auto;
+    margin-left: 80px;
+    
 }
 
 main{
     display: flex;
-    align-content: space-between;
+    flex: auto;
+    flex-wrap: wrap;
+}
+
+.card{
+    width: 350px;
+    height: 300px;
 }
