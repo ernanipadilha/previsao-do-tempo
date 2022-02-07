@@ -1,22 +1,24 @@
-.resume{
-    padding: 5px;
-    margin-top: 10px;
-    text-align: center; 
+.resume {
+  padding: 5px;
+  margin-top: 10px;
+  text-align: center;
+}
+
+main {
+  margin-top: 15px;
+  display: flex;
+  flex: auto;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 20px ;
+  align-items: stretch;
+}
+
+.card {
+  justify-content: center;
+  align-items: center;
 }
 
 .icon-temp{
-    display: block;
     margin-left: 80px;
-    
-}
-
-main{
-    display: flex;
-    flex: auto;
-    flex-wrap: wrap;
-}
-
-.card{
-    width: 350px;
-    height: 300px;
 }
