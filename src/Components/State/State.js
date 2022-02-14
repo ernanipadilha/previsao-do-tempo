@@ -17,8 +17,8 @@ export function State() {
 
   return (
     <div>
-      <FormControl required sx={{ m: 1, minWidth: 230 }}>
-        <InputLabel id="state">Selecione um estado:</InputLabel>
+      <FormControl required sx={{ m: 1, minWidth: 230}}>
+        <InputLabel id="state" >Selecione um estado:</InputLabel>
         <Select
           labelId="state"
           id="state"

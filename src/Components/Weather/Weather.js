@@ -1,4 +1,3 @@
-import { Paper } from "@mui/material";
 import { Box } from "@mui/system";
 import { useState, useEffect } from "react";
 import Image from "mui-image";
@@ -25,11 +24,12 @@ export function Weather({ id }) {
   return (
     <main>
       {days.map((day) => (
-        <Box className="card" sx={{ width: 350, height: 350 }}>
-          <Paper className="resume" elevation={3} sx={{ m: 1 }}>
+        <Box className="card" sx={{ width: 350, height: 450 }}>
+          
             <h2>
-              {day.data} <br/> {day?.manha?.dia_semana || day.dia_semana} <br/>{" "}
-              {day?.manha?.entidade || day.entidade}
+              {day?.manha?.entidade || day.entidade} <br />
+              {day?.manha?.dia_semana || day.dia_semana} <br />
+              {day.data}
             </h2>
             <div className="weather-card">
               <Image
@@ -51,7 +51,7 @@ export function Weather({ id }) {
             <br />
             Resumo do dia: {day?.manha?.resumo || day.resumo} <br />
             Estação do ano: {day?.manha?.estacao || day.estacao}
-          </Paper>
+       
         </Box>
         /* <p>
             {JSON.stringify(day?.manha?.uf || day.uf)}

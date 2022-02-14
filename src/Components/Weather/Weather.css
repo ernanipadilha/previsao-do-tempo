@@ -6,24 +6,27 @@
 
 main {
   margin-top: 15px;
+  margin-bottom: 15px;
   display: flex;
-  flex: auto;
   justify-content: center;
   flex-wrap: wrap;
-  gap: 20px ;
-  align-items: stretch;
+  gap: 20px;
 }
-
-.card {
+.card{
+  background-color: #FFF;
+  color: #000;
   justify-content: center;
-  align-items: center;
+  text-align: center;
+  border-radius: 5px;
+  padding: 5px;
 }
 
-.icon-temp{
-    margin-left: 10px;
-}
-.weather-card{
+.weather-card {
   display: flex;
   flex: auto;
-  justify-content: space-between;
+  
+}
+
+h3,h4{
+  margin: 2px;
 }
