@@ -27,17 +27,26 @@ export function Weather({ id }) {
       {days.map((day) => (
         <Box className="card" sx={{ width: 350, height: 350 }}>
           <Paper className="resume" elevation={3} sx={{ m: 1 }}>
-            {day.data} - {day?.manha?.entidade || day.entidade}
-            <Image
-              className="icon-temp"
-              height="50%"
-              width="50%"
-              src={day?.manha?.icone || day.icone}
-            ></Image>
-            Temperatura máxima: {day?.manha?.temp_max || day.temp_max}ºC
-            <br />
-            Temperatura mínima: {day?.manha?.temp_min || day.temp_min}ºC
-            <br />
+            <h2>
+              {day.data} <br/> {day?.manha?.dia_semana || day.dia_semana} <br/>{" "}
+              {day?.manha?.entidade || day.entidade}
+            </h2>
+            <div className="weather-card">
+              <Image
+                className="icon-temp"
+                height="50%"
+                width="50%"
+                showLoading={true}
+                src={day?.manha?.icone || day.icone}
+              ></Image>
+              <div>
+                <h3>Temperatura máxima:</h3>{" "}
+                <h4>{day?.manha?.temp_max || day.temp_max}ºC</h4>
+                <h3>Temperatura mínima:</h3>{" "}
+                <h4>{day?.manha?.temp_min || day.temp_min}ºC</h4>
+                <br />
+              </div>
+            </div>
             Intensidade do vento: {day?.manha?.int_vento || day.int_vento}
             <br />
             Resumo do dia: {day?.manha?.resumo || day.resumo} <br />

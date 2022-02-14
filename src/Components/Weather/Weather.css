@@ -20,5 +20,10 @@ main {
 }
 
 .icon-temp{
-    margin-left: 80px;
+    margin-left: 10px;
+}
+.weather-card{
+  display: flex;
+  flex: auto;
+  justify-content: space-between;
 }
